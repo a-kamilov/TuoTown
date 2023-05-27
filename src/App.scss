@@ -1,0 +1,751 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+i,
+button:hover {
+  cursor: pointer;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+$ff_jura: "Jura", sans-serif;
+$ff_montserrat: "Montserrat", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Jura&family=Montserrat:wght@400&display=swap");
+
+.app {
+  max-width: 1440px;
+  width: 100%;
+  margin: auto;
+  background: #373737;
+  position: relative;
+  overflow: hidden  ;
+
+  & > .h_form {
+    color: white;
+    z-index: 99;
+    background: url("./main_component/img/header_menuBg.png") center center /
+      cover;
+    position: absolute;
+    height: 931px;
+    width: 524px;
+    padding: 46px 0 0 48px;
+    left: -110%;
+    transition: all ease-in-out 700ms;
+    & > .fa-chevron-left {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+    & > ul {
+      list-style: none;
+      & > li {
+        margin-top: 45px;
+        & > a {
+          text-transform: uppercase;
+          font-family: $ff_montserrat;
+          font-size: 18px;
+          display: inline-block;
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+            box-sizing: border-box;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+    & > .form_ul2 {
+      margin-top: 60px;
+      & > li {
+        margin-top: 35px;
+        opacity: 60%;
+        & > a {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  & > .header {
+    background: url("./main_component/img/header.png") center center / cover;
+    color: white;
+    & > .navbar {
+      background: #212121cc;
+      backdrop-filter: blur(5.5px);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      & > .n_left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        & > img:hover {
+          cursor: pointer;
+          box-shadow: 0 0 5px white;
+        }
+        & > i {
+          font-size: 20px;
+          margin: 0 35px 0 25px;
+          &:nth-child(2),
+          &:nth-child(3) {
+            display: none;
+          }
+        }
+        & > p {
+          font-family: $ff_montserrat;
+          font-size: 20px;
+        }
+      }
+      & > a > img {
+        margin: 18px 0;
+      }
+      & > .n_right {
+        & > i {
+          font-size: 20px;
+          &:nth-child(2) {
+            margin: 0 28px;
+          }
+          &:hover {
+            opacity: 70%;
+          }
+        }
+      }
+    }
+    & > .swiper {
+      & > .swiper-pagination {
+        text-align: center;
+      }
+      & > .swiper-button-prev {
+        color: white;
+        margin-left: 80px;
+      }
+      & > .swiper-button-next {
+        color: white;
+        margin-right: 80px;
+      }
+      & > .swiper-wrapper {
+        & > .swiper-slide {
+          & > .h_content {
+            width: 602px;
+            margin: 77px 0 180px 189px;
+            & > h1 {
+              font-family: $ff_jura;
+              font-size: 41px;
+            }
+            & > p {
+              font-size: 19px;
+              font-family: $ff_montserrat;
+              line-height: 23px;
+              margin: 24px 0 55px;
+            }
+            & > button {
+              width: 165px;
+              height: 55px;
+              border: 2px solid #c80000;
+              outline: none;
+              background: transparent;
+              color: white;
+              border-radius: 27px;
+              font-family: $ff_montserrat;
+              font-size: 14px;
+              &:hover {
+                background: #c80000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  & > .header_2 {
+    height: 539px;
+    background: linear-gradient(
+        90.12deg,
+        rgba(0, 0, 0, 0.25) 29.13%,
+        rgba(0, 0, 0, 0.5) 52.72%,
+        rgba(0, 0, 0, 0.25) 73.86%
+      ),
+      url("./main_component/img/header_2.jpg") center center / cover;
+    &>.h_content_2{
+      border: 2px solid red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      &>h1{
+        font-size: 32px;
+        font-family: $ff_jura;
+        font-weight: 500;
+        margin-bottom: 40px;
+      }
+      &>p{
+        font-family: $ff_montserrat;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+    }
+
+  & > .fourCategory {
+    & > .categories {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      margin: 60px auto 88px;
+      & > a {
+        opacity: 0.4;
+        &:hover {
+          color: #ff0000;
+        }
+        & > p {
+          text-align: center;
+          font-family: $ff_montserrat;
+          font-size: 17px;
+          font-weight: 500;
+        }
+        & > img {
+          margin: 0 auto 31px;
+          display: block;
+        }
+      }
+    }
+    & > .fc_content {
+      padding: 0 120px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      & > .collection {
+        font-family: $ff_montserrat;
+        font-size: 17px;
+        position: relative;
+        margin-top: 25px;
+        overflow: hidden;
+        & > img {
+          transition: all ease-in 300ms;
+        }
+        &:hover img {
+          transform: scale(1.2);
+        }
+        & > .more {
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          width: 140px;
+          height: 35px;
+          line-height: 30px;
+          background: #c80000;
+          box-shadow: 0 0 10px #ff0000;
+          transition: all ease-in-out 500ms;
+          text-align: center;
+          color: white;
+          border-top-right-radius: 14px;
+          font-family: $ff_jura;
+          display: none;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        & > a {
+          position: absolute;
+          left: 26px;
+          bottom: 28px;
+          &:hover {
+            opacity: 85%;
+            cursor: pointer;
+          }
+          &::before {
+            content: "Познакомьтесь с коллекцией ножей TUOTOWN";
+            padding-right: 80px;
+          }
+        }
+      }
+      & > .Fcc_item {
+        margin-top: 25px;
+        margin: 25px 5px;
+        color: white;
+        position: relative;
+        font-family: $ff_montserrat;
+        & > .shop {
+          color: white;
+          right: 27px;
+          position: absolute;
+          top: 24px;
+          transition: all linear 200ms;
+          height: 37px;
+          width: 72px;
+          border-radius: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: end;
+          & > .fa-shopping-bag {
+            margin-left: 17px;
+            display: none;
+          }
+        }
+        & > .knife_2 {
+          padding: 125px 11px 106.5px;
+        }
+        & > img {
+          border-radius: 14px;
+          background: #272727;
+          padding: 95px 11px 80px;
+        }
+        & > h5 {
+          margin-top: 12px;
+          font-weight: 500;
+          font-size: 14px;
+        }
+        & > p {
+          font-weight: 600;
+          opacity: 50%;
+          font-size: 14px;
+        }
+      }
+      & > .new p::after {
+        content: "Новинка";
+        margin-left: 28px;
+        color: #ff3232;
+      }
+    }
+    & > .subscription {
+      margin: 40px auto;
+      color: white;
+      text-align: center;
+      & > h1 {
+        font-family: $ff_jura;
+        font-size: 27px;
+        font-weight: 500;
+        margin-bottom: 17px;
+      }
+      & > form {
+        position: relative;
+        width: 277px;
+        margin: auto;
+        & > input {
+          border: none;
+          outline: none;
+          height: 59px;
+          width: 276px;
+          border-radius: 6px;
+          background: #272727;
+          color: white;
+          padding: 0 40px 0 25px;
+          font-family: $ff_montserrat;
+        }
+        & > button {
+          position: absolute;
+          border: none;
+          color: white;
+          outline: none;
+          top: 22px;
+          background: transparent;
+          right: 25px;
+        }
+      }
+    }
+    & > .category_2 {
+      padding: 60px 0;
+      margin: 60px 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      & > ul {
+        margin: 0 auto 10px;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        & > li {
+          color: white;
+          font-family: $ff_montserrat;
+          font-weight: 600;
+          font-size: 17px;
+          opacity: 50%;
+          transition: all linear 400ms;
+          border-bottom: 2px solid transparent;
+          &:nth-child(2) {
+            margin-left: 53px;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      & > .category_2_2 > .popular {
+        display: none;
+      }
+      & > .fc_content {
+        padding: 0 120px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        & > p {
+          font-family: $ff_montserrat;
+          font-size: 17px;
+          position: relative;
+          margin-top: 25px;
+          & > a {
+            position: absolute;
+            left: 26px;
+            bottom: 28px;
+            &:hover {
+              opacity: 85%;
+            }
+            &::before {
+              content: "Познакомьтесь с коллекцией ножей TUOTOWN";
+              padding-right: 80px;
+            }
+          }
+        }
+        & > .Fcc_item {
+          margin-top: 25px;
+          margin: 25px 5px;
+          color: white;
+          position: relative;
+          font-family: $ff_montserrat;
+          & > .shop {
+            color: white;
+            right: 27px;
+            position: absolute;
+            top: 24px;
+            transition: all linear 200ms;
+            height: 37px;
+            width: 72px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            & > .fa-shopping-bag {
+              margin-left: 17px;
+              display: none;
+            }
+          }
+          & > .knife_2 {
+            padding: 125px 11px 106.5px;
+          }
+          & > img {
+            border-radius: 14px;
+            background: #272727;
+            padding: 95px 11px 80px;
+          }
+          & > h5 {
+            margin-top: 12px;
+            font-weight: 500;
+            font-size: 14px;
+          }
+          & > p {
+            font-weight: 600;
+            opacity: 50%;
+            font-size: 14px;
+          }
+        }
+        & > .new p::after {
+          content: "Новинка";
+          margin-left: 28px;
+          color: #ff3232;
+        }
+        & > .popular p::after {
+          content: "Популярный";
+          margin-left: 28px;
+          color: #ff3232;
+        }
+      }
+    }
+  }
+
+  & > .aboutUs {
+    color: white;
+    padding: 0 120px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    & > .au_top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 39px;
+      & > .text {
+        margin-left: 5%;
+        width: 672px;
+        & > h1 {
+          font-family: $ff_jura;
+          font-size: 35px;
+          line-height: 42px;
+          font-weight: 500;
+          margin-bottom: 10%;
+        }
+        & > p {
+          font-size: 16px;
+          font-family: $ff_montserrat;
+          line-height: 22px;
+          font-weight: 400;
+        }
+      }
+    }
+    & > .au_bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 39px;
+      & > .text {
+        width: 817px;
+        & > h1 {
+          font-family: $ff_jura;
+          font-size: 35px;
+          line-height: 42px;
+          font-weight: 500;
+          margin-bottom: 50px;
+        }
+        & > p {
+          font-size: 16px;
+          font-family: $ff_montserrat;
+          line-height: 22px;
+          font-weight: 400;
+          &:nth-child(2) {
+            margin: 27px 0 43px;
+          }
+        }
+      }
+    }
+    & > .au_bottom_2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      display: none;
+      & > .aut_left {
+        display: flex;
+        flex-direction: column;
+        padding-right: 30px;
+        max-width: 300px;
+        & > h1 {
+          font-family: $ff_jura;
+          font-size: 24px;
+          line-height: 28px;
+          margin-bottom: 25px;
+        }
+        & > p {
+          font-family: $ff_montserrat;
+          font-size: 14px;
+          line-height: 19px;
+          color: #adacac;
+        }
+      }
+      & > .aut_right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 300px;
+        & > img {
+          width: 300px;
+          border-radius: 15px;
+          margin-bottom: 20%;
+        }
+        & > p {
+          font-family: $ff_montserrat;
+          font-size: 14px;
+          line-height: 19px;
+          color: #adacac;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  & > .news {
+    color: white;
+    padding: 0 120px;
+    margin-top: 60px;
+    & > h1 {
+      margin-bottom: 35px;
+      font-family: $ff_jura;
+      font-size: 35px;
+      font-weight: 500;
+    }
+    & > .n_cards {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      & > .card {
+        height: 465px;
+        width: 380px;
+        border-radius: 14px;
+        position: relative;
+        font-family: $ff_montserrat;
+        overflow: hidden;
+        &:hover > img {
+          transform: scale(1.5);
+        }
+        & > img {
+          transition: all linear 350ms;
+          height: 465px;
+          width: 380px;
+          border-radius: 14px;
+          opacity: 60%;
+        }
+        & > p {
+          position: absolute;
+          top: 23px;
+          right: 39px;
+          font-size: 14px;
+        }
+        & > a {
+          font-size: 17px;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          height: 83px;
+          max-width: 380px;
+          width: 100%;
+          border-bottom-left-radius: 14px;
+          border-bottom-right-radius: 14px;
+          padding: 13px 36px 0 33px;
+          z-index: 99;
+          &:hover {
+            background: #c80000;
+            transition: all ease 500ms;
+          }
+        }
+      }
+    }
+  }
+
+  & > .footer {
+    margin-top: 60px;
+    padding: 44px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background: #272727;
+    color: white;
+    & > .f_left {
+      width: 368px;
+      color: white;
+      & > .fl_top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 29px;
+        & > h4 {
+          font-family: $ff_montserrat;
+          width: 160px;
+          font-size: 13px;
+          font-weight: 600;
+        }
+      }
+      & > .fl_bottom {
+        font-family: $ff_montserrat;
+        font-weight: 400;
+        font-size: 13px;
+      }
+    }
+    & > .f_center {
+      display: flex;
+      flex-direction: column;
+      width: 420px;
+      & > .fc_top {
+        & > .katalog {
+          margin-top: 25px;
+        }
+        & > h4 {
+          font-family: $ff_montserrat;
+          font-size: 17px;
+          margin-bottom: 14px;
+          font-weight: 600;
+        }
+        & > ul {
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          font-family: $ff_montserrat;
+          & > li {
+            line-height: 24px;
+            font-size: 14px;
+            opacity: 50%;
+            &:hover {
+              opacity: 90%;
+            }
+          }
+        }
+      }
+      & > .fc_social {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 48px;
+        & > h4 {
+          font-family: $ff_montserrat;
+          font-size: 17px;
+          font-weight: 600;
+          margin-right: 24px;
+        }
+        & > i {
+          height: 31px;
+          width: 31px;
+          background: #2e2e2e;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 31px;
+          font-size: 13px;
+          margin: 0 4px;
+          &:hover {
+            background: #434242;
+          }
+        }
+      }
+    }
+    & > .f_right {
+      font-family: $ff_montserrat;
+      width: 280px;
+      & > h3 {
+        font-size: 17px;
+        font-weight: 600;
+      }
+      & > ul {
+        margin-top: 20px;
+        & > h2 {
+          font-size: 20px;
+        }
+        & > p {
+          font-size: 14px;
+          &:nth-child(2) {
+            margin: 9px 0;
+          }
+          &:nth-child(4) {
+            margin: 25px 0 18px;
+          }
+        }
+      }
+    }
+  }
+
+  & > .copyright {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-family: $ff_jura;
+    line-height: 50px;
+    & > p > a > i {
+      color: black;
+      background: white;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      margin-left: 15px;
+    }
+  }
+}
